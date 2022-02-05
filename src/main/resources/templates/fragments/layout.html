@@ -1,5 +1,5 @@
 <!doctype html>
-<html th:fragment="layout (template, menu)">
+<html th:fragment="layout (template, menu)" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -45,26 +45,26 @@
 
         <ul class="nav navbar-nav me-auto">
 
-          <li th:replace="::menuItem ('/','home','home page','home','Home')">
-            <span class="fa fa-home" aria-hidden="true"></span>
-            <span>Home</span>
-          </li>
+<!--          <li th:replace="::menuItem ('/','home','home page','home','Home')">-->
+<!--            <span class="fa fa-home" aria-hidden="true"></span>-->
+<!--            <span>Home</span>-->
+<!--          </li>-->
 
-          <li th:replace="::menuItem ('/owners/find','owners','find owners','search','Find owners')">
-            <span class="fa fa-search" aria-hidden="true"></span>
-            <span>Find owners</span>
-          </li>
+<!--          <li th:replace="::menuItem ('/owners/find','owners','find owners','search','Find owners')">-->
+<!--            <span class="fa fa-search" aria-hidden="true"></span>-->
+<!--            <span>Find owners</span>-->
+<!--          </li>-->
 
-          <li th:replace="::menuItem ('/vets.html','vets','veterinarians','th-list','Veterinarians')">
+          <li th:replace="::menuItem ('/slots.html','slots','slots','th-list','Slots')">
             <span class="fa fa-th-list" aria-hidden="true"></span>
-            <span>Veterinarians</span>
+            <span>Slots</span>
           </li>
 
-          <li
-            th:replace="::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','exclamation-triangle','Error')">
-            <span class="fa exclamation-triangle" aria-hidden="true"></span>
-            <span>Error</span>
-          </li>
+<!--          <li-->
+<!--            th:replace="::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','exclamation-triangle','Error')">-->
+<!--            <span class="fa exclamation-triangle" aria-hidden="true"></span>-->
+<!--            <span>Error</span>-->
+<!--          </li>-->
 
         </ul>
       </div>

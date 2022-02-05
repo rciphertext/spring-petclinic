@@ -7,27 +7,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Entity
-@Table(name = "parking")
-public class AvailableSlot implements Serializable {
-	@Id
-	@Column(name = "id", nullable = false)
-	private int id;
-
+public class RequestSlot {
 	@JsonProperty("slot")
-	@Column(name = "slot", nullable = false)
 	String slot;
 
 	@JsonProperty("position")
-	@Column(name = "position", nullable = false)
 	String position;
 }
