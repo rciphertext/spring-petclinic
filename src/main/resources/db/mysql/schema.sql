@@ -53,3 +53,9 @@ CREATE TABLE IF NOT EXISTS visits (
   description VARCHAR(255),
   FOREIGN KEY (pet_id) REFERENCES pets(id)
 ) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS parking (
+  id INT(10000) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  slot VARCHAR(255),
+  position VARCHAR(255)
+) engine=InnoDB;
