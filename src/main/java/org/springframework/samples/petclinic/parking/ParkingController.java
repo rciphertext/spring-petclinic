@@ -2,6 +2,8 @@ package org.springframework.samples.petclinic.parking;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.ehcache.spi.serialization.SerializerException;
+import org.hibernate.exception.DataException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -57,8 +59,10 @@ public class ParkingController {
 		Pageable pageable = PageRequest.of(page - 1, pageSize);
 		try{
 			return parkRepository.findAll(pageable);
-		}catch (Exception e){
-			e.printStackTrace();
+		}catch (DataException | SerializerException e){
+			logger.warn("Exception encountered");
+		} catch (Exception e){
+			logger.error("Other exception", e);
 		}
 		return null;
 	}

@@ -18,7 +18,7 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "parking")
-public class AvailableSlot implements Serializable {
+public class AvailableSlot {
 	@Id
 	@Column(name = "id", nullable = false)
 	private int id;
